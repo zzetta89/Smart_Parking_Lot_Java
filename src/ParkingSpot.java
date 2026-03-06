@@ -19,15 +19,19 @@ public class ParkingSpot {
         return spotType;
     }
 
+    public int getSpotNumber(){ return spotNumber; }
+
+    public String getParkedVehicleLicensePlate(){ return this.parkedVehicle.getLicensePlate(); }
+
     public boolean park(Vehicle v){
         if(!isFree){
-            System.out.println("Acest loc este deja ocupat!");
+            //System.out.println("Acest loc este deja ocupat!");
             return false;
         }
 
         this.parkedVehicle = v;
         this.isFree = false;
-        System.out.println("Vehiculul: " + parkedVehicle.getLicensePlate() + "a parcat pe locul: " + this.spotNumber);
+        //System.out.println("Vehiculul: " + parkedVehicle.getLicensePlate() + "a parcat pe locul: " + this.spotNumber);
         return true;
     }
 
@@ -37,7 +41,7 @@ public class ParkingSpot {
             return;
         }
 
-        System.out.println("Locul cu numarul: " + this.spotNumber + "a fost eliberat de vehiculul: " + this.parkedVehicle.getLicensePlate());
+        //System.out.println("Locul cu numarul: " + this.spotNumber + "a fost eliberat de vehiculul: " + this.parkedVehicle.getLicensePlate());
         this.parkedVehicle = null;
         this.isFree = true;
     }
